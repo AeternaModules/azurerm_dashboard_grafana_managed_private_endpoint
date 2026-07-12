@@ -1,3 +1,7 @@
+output "dashboard_grafana_managed_private_endpoints_id" {
+  description = "Map of id values across all dashboard_grafana_managed_private_endpoints, keyed the same as var.dashboard_grafana_managed_private_endpoints"
+  value       = { for k, v in azurerm_dashboard_grafana_managed_private_endpoint.dashboard_grafana_managed_private_endpoints : k => v.id }
+}
 output "dashboard_grafana_managed_private_endpoints_grafana_id" {
   description = "Map of grafana_id values across all dashboard_grafana_managed_private_endpoints, keyed the same as var.dashboard_grafana_managed_private_endpoints"
   value       = { for k, v in azurerm_dashboard_grafana_managed_private_endpoint.dashboard_grafana_managed_private_endpoints : k => v.grafana_id }
